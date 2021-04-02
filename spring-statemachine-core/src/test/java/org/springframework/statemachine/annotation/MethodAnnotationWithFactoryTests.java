@@ -55,7 +55,7 @@ public class MethodAnnotationWithFactoryTests extends AbstractStateMachineTests 
 		assertThat(bean1.onStateChangedLatch.await(1, TimeUnit.SECONDS)).isTrue();
 	}
 
-	@WithStateMachine(id = "xxx")
+	@WithStateMachine(name = "xxx")
 	static class Bean1 {
 
 		CountDownLatch onStateChangedLatch = new CountDownLatch(1);
@@ -63,7 +63,6 @@ public class MethodAnnotationWithFactoryTests extends AbstractStateMachineTests 
 		@OnStateChanged
 		public void onStateChanged() {
 			onStateChangedLatch.countDown();
-			System.out.println("########### bean1 state changed");
 		}
 	}
 
