@@ -88,6 +88,7 @@ public class MethodAnnotationWithDefaultsWithFactoryTests extends AbstractStateM
 		@OnStateChanged
 		public void onStateChanged() {
 			onStateChangedLatch.countDown();
+			System.out.println("########### bean1 state changed");
 		}
 	}
 
@@ -99,6 +100,7 @@ public class MethodAnnotationWithDefaultsWithFactoryTests extends AbstractStateM
 		@OnStateChanged
 		public void onStateChanged() {
 			onStateChangedLatch.countDown();
+			System.out.println("********* bean2 state changed");
 		}
 	}
 
